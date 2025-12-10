@@ -157,8 +157,7 @@ The app uses an **Electric Blue Dark Theme**:
 | `POST` | `/upload` | Upload a document |
 | `GET` | `/podcasts/{filename}` | Download podcast audio |
 
-## 👥 Contributors
-
+## 👥 TEAM MEMBERS
 <table>
   <tr>
     <td align="center">
