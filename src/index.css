@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 88%;
+
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 88%;
+
+    --popover: 0 0% 14%;
+    --popover-foreground: 0 0% 88%;
+
+    --primary: 180 100% 50%;
+    --primary-foreground: 0 0% 7%;
+
+    --secondary: 0 0% 16%;
+    --secondary-foreground: 0 0% 88%;
+
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 63%;
+
+    --accent: 180 100% 50%;
+    --accent-foreground: 0 0% 7%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 88%;
+
+    --success: 142 76% 45%;
+    --success-foreground: 0 0% 88%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 7%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 16%;
+    --ring: 180 100% 50%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 9%;
+    --sidebar-foreground: 0 0% 63%;
+    --sidebar-primary: 180 100% 50%;
+    --sidebar-primary-foreground: 0 0% 7%;
+    --sidebar-accent: 0 0% 14%;
+    --sidebar-accent-foreground: 0 0% 88%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 180 100% 50%;
+
+    /* Custom design tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(180 100% 50%) 0%, hsl(200 100% 50%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(180 100% 50%) 0%, hsl(160 100% 45%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 14%) 0%, hsl(0 0% 12%) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(180 100% 50% / 0.15) 0%, transparent 70%);
+
+    --shadow-glow: 0 0 40px hsl(180 100% 50% / 0.2);
+    --shadow-card: 0 4px 24px hsl(0 0% 4% / 0.4);
+    --shadow-elevated: 0 8px 32px hsl(0 0% 4% / 0.6);
+
+    --glass-bg: hsl(0 0% 14% / 0.6);
+    --glass-border: hsl(0 0% 63% / 0.1);
+  }
+
+  .dark {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 88%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-secondary;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+  }
+
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-border {
+    position: relative;
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: var(--gradient-primary);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  .glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply bg-card rounded-xl border border-border;
+    box-shadow: var(--shadow-card);
+  }
+
+  .panel-elevated {
+    @apply bg-card rounded-xl border border-border;
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .btn-glow {
+    @apply relative overflow-hidden;
+  }
+
+  .btn-glow::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .btn-glow:hover::after {
+    opacity: 0.15;
+  }
+}
