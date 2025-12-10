@@ -191,4 +191,4 @@ This project is for educational purposes. Feel free to use and learn from it!
 
 ---
 
-<p align="center">Made with ❤️ and AI</p>
+<p align="center">Made with ❤️</p>
