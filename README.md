@@ -86,6 +86,105 @@ An intelligent study companion that helps you learn smarter with AI-powered docu
 
 6. The API will be available at http://localhost:8000
 
+## 👥 Team Collaboration & Repository Visibility
+
+### Making the Repository Visible to Team Members
+
+#### Option 1: Public Repository (Recommended for Open Source)
+If your repository is already public, it's automatically visible to everyone on GitHub. Team members can:
+1. Visit the repository URL: `https://github.com/MR-WHOAMEYE/study_companion-ai`
+2. Click **Fork** to create their own copy
+3. Clone their fork to work on it locally
+
+#### Option 2: Private Repository with Collaborators
+If you want to keep the repository private but share it with specific team members:
+
+1. **Add Collaborators:**
+   - Go to your repository on GitHub
+   - Click **Settings** → **Collaborators and teams**
+   - Click **Add people**
+   - Enter your team member's GitHub username
+   - Select their permission level:
+     - **Read**: View and clone only
+     - **Write**: Push changes directly
+     - **Admin**: Full access including settings
+
+2. **Team members will receive an invitation email** and must accept it to access the repository
+
+### For Team Members: Getting Started
+
+#### 1. **Clone the Repository**
+```bash
+# Clone the main repository
+git clone https://github.com/MR-WHOAMEYE/study_companion-ai.git
+cd study_companion-ai
+```
+
+#### 2. **Or Fork and Clone (Recommended)**
+```bash
+# Fork the repository on GitHub first, then:
+git clone https://github.com/YOUR_USERNAME/study_companion-ai.git
+cd study_companion-ai
+
+# Add upstream remote to sync with main repo
+git remote add upstream https://github.com/MR-WHOAMEYE/study_companion-ai.git
+```
+
+#### 3. **Create a Branch for Your Work**
+```bash
+# Create and switch to a new branch
+git checkout -b feature/your-feature-name
+```
+
+#### 4. **Make Changes and Commit**
+```bash
+# Stage your changes
+git add .
+
+# Commit with a descriptive message
+git commit -m "Add: description of your changes"
+```
+
+#### 5. **Push Changes**
+```bash
+# Push to your fork (if using fork workflow)
+git push origin feature/your-feature-name
+
+# Or push directly (if you're a collaborator with write access)
+git push origin feature/your-feature-name
+```
+
+#### 6. **Create a Pull Request**
+- Go to the repository on GitHub
+- Click **Pull Requests** → **New Pull Request**
+- Select your branch and create the PR
+- Add a description of your changes
+- Request review from team members
+
+### Syncing with Main Repository
+```bash
+# Fetch latest changes from main repository
+git fetch upstream
+
+# Switch to your main branch
+git checkout main
+
+# Merge changes from upstream
+git merge upstream/main
+
+# Push updated main to your fork
+git push origin main
+```
+
+### Best Practices for Team Collaboration
+- 🔄 **Always pull latest changes** before starting new work
+- 🌿 **Use feature branches** for all changes
+- 💬 **Write clear commit messages** describing what and why
+- 🔍 **Request code reviews** before merging
+- ✅ **Test your changes** locally before pushing
+- 📝 **Update documentation** when adding new features
+- 🐛 **Create issues** for bugs and feature requests
+
 ## 🛠️ Tech Stack
 
 ### Frontend
