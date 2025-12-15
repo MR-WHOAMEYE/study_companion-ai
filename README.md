@@ -147,10 +147,9 @@ git commit -m "Add: description of your changes"
 
 #### 5. **Push Changes**
 ```bash
-# Push to your fork (if using fork workflow)
-git push origin feature/your-feature-name
-
-# Or push directly (if you're a collaborator with write access)
+# Push to your branch (works for both fork and direct collaboration workflows)
+# For fork workflow: "origin" is your fork
+# For direct collaboration: "origin" is the main repository
 git push origin feature/your-feature-name
 ```
 
